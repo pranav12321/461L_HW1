@@ -61,7 +61,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                 addressList = geocoder.getFromLocationName(location, 1);
             } catch (Exception e) {
-                e.printStackTrace();                                // gprc exception when bckend service isn't running due to connection failure
+                // gprc exception when bckend service isn't running due to connection failure
+                e.printStackTrace();
             }
 
 
@@ -69,7 +70,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mTextViewResult.setText("Invalid");                   //Check for invalid inputs
                 return;
             }
-            final Address address = addressList.get(0);                                         //get the converted address, and the latitude and longitude
+            final Address address = addressList.get(0);
+            //get the converted address, and the latitude and longitude
             LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
 
 
@@ -94,8 +96,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         @Override
                         public void run() {
                             try {
-                                //mTextViewResult.setText(response.body().string());
-                                JSONObject obj = new JSONObject(response.body().string());       // Parse the necessary key values from the JSON file returned by darksky query
+                                // Parse the necessary key values from the JSON file returned by darksky query
+                                JSONObject obj = new JSONObject(response.body().string());
                                 String weather_data = getString(R.string.weather_data,address.getLatitude() ,address.getLongitude(),
                                                                 obj.getJSONObject("currently").getDouble("humidity"),
                                                                 obj.getJSONObject("currently").getDouble("temperature"),
