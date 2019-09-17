@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GoogleMapsAPI</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="weather_data">Latitude = %1$f Longitude = %2$f \n Humidity = %3$f \n Temperature = %4$f \n Precipitation probability = %5$f \n windSpeed = %6$f</string>
+</resources>
